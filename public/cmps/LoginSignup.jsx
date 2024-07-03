@@ -31,36 +31,44 @@ export function LoginSignup({ onSetUser }) {
             .then(() => { showSuccessMsg('Signed in successfully') })
             .catch((err) => { showErrorMsg('Oops try again') })
     }
-
     return (
-        <div className="login-page">
+        <div className="login-box">
+            <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    value={credentials.username}
-                    placeholder="Username"
-                    onChange={handleChange}
-                    required
-                    autoFocus
-                />
-                <input
-                    type="password"
-                    name="password"
-                    value={credentials.password}
-                    placeholder="Password"
-                    onChange={handleChange}
-                    required
-                    autoComplete="off"
-                />
-                {isSignup && <input
-                    type="text"
-                    name="fullname"
-                    value={credentials.fullname}
-                    placeholder="Full name"
-                    onChange={handleChange}
-                    required
-                />}
+                <div className="user-box">
+                    <input
+                        type="text"
+                        name="username"
+                        value={credentials.username}
+                        onChange={handleChange}
+                        required
+                        autoFocus
+                    />
+                    <label>Username</label>
+                </div>
+                <div className="user-box">
+                    <input
+                        type="password"
+                        name="password"
+                        value={credentials.password}
+                        onChange={handleChange}
+                        required
+                        autoComplete="off"
+                    />
+                    <label>Password</label>
+                </div>
+                {isSignup && (
+                    <div className="user-box">
+                        <input
+                            type="text"
+                            name="fullname"
+                            value={credentials.fullname}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label>Full name</label>
+                    </div>
+                )}
                 <button>{isSignup ? 'Signup' : 'Login'}</button>
             </form>
 
@@ -68,7 +76,7 @@ export function LoginSignup({ onSetUser }) {
                 <a href="#" onClick={() => setIsSignUp(!isSignup)}>
                     {isSignup ?
                         'Already a member? Login' :
-                        'New user? Signup here'
+                        'New user?   Signup here'
                     }
                 </a >
             </div>

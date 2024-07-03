@@ -30,9 +30,11 @@ export function AppHeader() {
             </nav>
             <h1>Bugs are Forever</h1>
             {user ? (
-                <section>
-                    <Link to={`/user/${user._id}`}>Hello {user.fullname}</Link>
-                    <button onClick={onLogout}>Logout</button>
+                <section className="header-name">
+
+                    <Link to={`/user/${user._id}`} className="header-txt" >Hello   {user.fullname}</Link>
+                    <br />
+                    <button className="header-btn" onClick={onLogout}>Logout</button>
                 </section>
             ) : (
                 <section>

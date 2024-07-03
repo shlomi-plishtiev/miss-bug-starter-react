@@ -17,11 +17,11 @@ export function BugFilter({filterBy, onSetFilter}) {
 
   const {txt, severity} = filterByToEdit
   return (
-    <section className="bug-filter full main-layout">
+    <section className="bug-filter">
       <h2>Filter Our Bugs</h2>
 
-      <form >
-        <label htmlFor="txt">Vendor:</label>
+      <form  >
+        <label htmlFor="txt">text:</label>
         <input
           value={txt}
           onChange={handleChange}
@@ -30,7 +30,7 @@ export function BugFilter({filterBy, onSetFilter}) {
           type="text"
           placeholder="By Text"
         />
-
+<br />
         <label htmlFor="severity">Severity:</label>
         <input
           value={severity}

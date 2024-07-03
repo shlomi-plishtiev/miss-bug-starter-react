@@ -96,27 +96,27 @@ export function BugIndex() {
         setFilterBy(prevFilterBy => ({
             ...prevFilterBy,
             sortBy,
-            sortDir: prevFilterBy.sortDir === 1 ? -1 : 1 
+            sortDir: prevFilterBy.sortDir === 1 ? -1 : 1
         }))
     }
     return (
         <main>
             <section className='info-actions'>
-                <h3>Bugs App</h3>
-                <button onClick={onAddBug}>Add Bug ⛐</button>
+                <BugFilter onSetFilter={onSetFilter} filterBy={filterBy} />
             </section>
-            <BugFilter onSetFilter={onSetFilter} filterBy={filterBy} />
-            <section>
-                <button onClick={togglePagination} >Toggle Pagination</button>
-                <button onClick={() => onChangePage(-1)}>-</button>
-                {filterBy.pageIdx + 1 || 'No Pagination'}
-                <button onClick={() => onChangePage(1)}>+</button>
-            </section>
-            <section>
+            <section className="pagination">
+                <button className="pagination-btn" onClick={togglePagination} >Toggle Pagination</button>
+                <button className="pagination-btn" onClick={() => onChangePage(-1)}>-</button>
+                {filterBy.pageIdx + 1 || '  No Pagination  '}
+                <button className="pagination-btn" onClick={() => onChangePage(1)}>+</button>
+                <br />
                 <h4>Sort by:</h4>
-                <button onClick={() => onSetSort('title')}>Title</button>
-                <button onClick={() => onSetSort('severity')}>Severity</button>
-                <button onClick={() => onSetSort('createdAt')}>Created At</button>
+                <button className="pagination-btn" onClick={() => onSetSort('title')}>Title</button>
+                <button className="pagination-btn" onClick={() => onSetSort('severity')}>Severity</button>
+                <button className="pagination-btn" onClick={() => onSetSort('createdAt')}>Created At</button>
+                <br />
+                <h4>Add Bug</h4>
+                <button onClick={onAddBug} className='pagination-btn'>Add Bug ⛐</button>
             </section>
             <main>
                 <BugList bugs={bugs} onRemoveBug={onRemoveBug} onEditBug={onEditBug} />
