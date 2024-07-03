@@ -1,0 +1,21 @@
+{
+  "name": "miss-bug-starter-react",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon --ignore \"./data\" server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cryptr": "^6.3.0",
+    "express": "^4.19.2",
+    "gitignore-parser": "^0.0.2"
+  }
+}
