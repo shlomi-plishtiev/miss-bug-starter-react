@@ -150,7 +150,7 @@ app.post('/api/auth/logout', (req, res) => {
 app.get('/', (req, res) => res.send('Hello there'))
 
 
-const port = 3030
+const port =  process.env.PORT || 3030
 app.listen(port, () =>
     loggerService.info((`Server listening on port http://127.0.0.1:${port}/`))
 )
